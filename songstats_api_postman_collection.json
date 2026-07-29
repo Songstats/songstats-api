@@ -3331,7 +3331,7 @@
                 }
               ]
             },
-            "description": "Returns metadata information of a track. Associated links include Qobuz when available.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns metadata information of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
