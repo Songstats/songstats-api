@@ -805,6 +805,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "cursor",
+                  "value": "{{cursor}}",
+                  "description": "Opaque cursor returned by a catalog response. Prefer this over offset for the next page.",
+                  "disabled": true
+                },
+                {
                   "key": "with_links",
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
@@ -812,7 +818,7 @@
                 }
               ]
             },
-            "description": "Returns the track catalog of an artist ordered by release date.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of an artist ordered by release date descending, with Songstats track ID ascending as a stable tie-breaker.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Specifies the limit of results being returned. Defaults to 100. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- cursor (optional): Opaque cursor returned by a catalog response. Prefer this over offset for the next page.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -1793,6 +1799,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "cursor",
+                  "value": "{{cursor}}",
+                  "description": "Opaque cursor returned by a catalog response. Prefer this over offset for the next page.",
+                  "disabled": true
+                },
+                {
                   "key": "with_links",
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
@@ -1800,7 +1812,7 @@
                 }
               ]
             },
-            "description": "Returns the track catalog of a collaborator ordered by release date.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_collaborator_id (optional): The Songstats ID of the collaborator being requested * Example: vkwh40ql.\n- tidal_artist_id (optional): The TIDAL ID of the collaborator being requested * Example: 49475872.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of a collaborator ordered by release date descending, with Songstats track ID ascending as a stable tie-breaker.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_collaborator_id (optional): The Songstats ID of the collaborator being requested * Example: vkwh40ql.\n- tidal_artist_id (optional): The TIDAL ID of the collaborator being requested * Example: 49475872.\n- limit (optional): Specifies the limit of results being returned. Defaults to 100. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- cursor (optional): Opaque cursor returned by a catalog response. Prefer this over offset for the next page.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -2727,6 +2739,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "cursor",
+                  "value": "{{cursor}}",
+                  "description": "Opaque cursor returned by a catalog response. Prefer this over offset for the next page.",
+                  "disabled": true
+                },
+                {
                   "key": "with_links",
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
@@ -2734,7 +2752,7 @@
                 }
               ]
             },
-            "description": "Returns the track catalog of a record label ordered by release date.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of a record label ordered by release date descending, with Songstats track ID ascending as a stable tie-breaker.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- limit (optional): Specifies the limit of results being returned. Defaults to 100. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- cursor (optional): Opaque cursor returned by a catalog response. Prefer this over offset for the next page.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
