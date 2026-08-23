@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "38d9702c-89f5-45ed-9a84-bf1476df54e7",
     "name": "Songstats API",
-    "description": "Enterprise Access to Music Data across all DSPs\n\nEnterprise API collection generated from docs/songstats_api_openapi.yaml and live Rails Enterprise routes.\nSet the `api_key` collection variable before sending authenticated requests. The collection uses the `apikey` header for authentication.\n\nPostman exports collections as JSON. This file uses the Postman Collection v2.1 schema.",
+    "description": "Enterprise Access to Music Data across all DSPs\n\nEnterprise API collection generated from docs/songstats_api_openapi.yaml and live Rails Enterprise routes.\nSet the `api_key` collection variable before sending authenticated requests. The collection uses the `apikey` header for authentication. Link and track mutations require the matching `add_link_request`, `remove_link_request`, `add_track_request`, or `remove_track_request` permission plus access to the requested object type.\n\nPostman exports collections as JSON. This file uses the Postman Collection v2.1 schema.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "auth": {
