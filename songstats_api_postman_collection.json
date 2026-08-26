@@ -2543,7 +2543,7 @@
                 }
               ]
             },
-            "description": "Returns summary and detailed information of a record label filtered by source.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns summary and detailed information of a record label filtered by source. Spotify monthly listeners are not returned for labels.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -2649,7 +2649,7 @@
                 }
               ]
             },
-            "description": "Returns audience information of a record label filtered by source.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns audience information of a record label filtered by source. Spotify monthly-listener locations are not returned for labels.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -2699,7 +2699,7 @@
                 }
               ]
             },
-            "description": "Returns detailed audience information of a record label for a specific country filtered by source.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- country_code (required): A two-letter country code Example: US.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns detailed audience information of a record label for a specific country filtered by source. Spotify monthly-listener locations are not returned for labels.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- country_code (required): A two-letter country code Example: US.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
