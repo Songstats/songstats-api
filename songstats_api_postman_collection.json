@@ -3342,7 +3342,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3364,7 +3364,7 @@
                 }
               ]
             },
-            "description": "Returns metadata information of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns metadata information of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3404,7 +3404,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3480,7 +3480,7 @@
                 }
               ]
             },
-            "description": "Returns the latest activities of a track filtered by source.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- milestones (optional): Include Milestone Activities. Example: true.\n- albums (optional): Include Album Activities. Example: true.\n- editorial (optional): Only include Editorial Activities. Example: false.\n- tier (optional): Filter Activities by importance. Tier 4 is the lowest tier that returns all activities. Tier 1 is the highest tier that returns only the most significant activities. Example: 4.\n- comments (optional): Include Comment Activities. Example: true.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the latest activities of a track filtered by source.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- milestones (optional): Include Milestone Activities. Example: true.\n- albums (optional): Include Album Activities. Example: true.\n- editorial (optional): Only include Editorial Activities. Example: false.\n- tier (optional): Filter Activities by importance. Tier 4 is the lowest tier that returns all activities. Tier 1 is the highest tier that returns only the most significant activities. Example: 4.\n- comments (optional): Include Comment Activities. Example: true.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3514,7 +3514,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3614,7 +3614,7 @@
                 }
               ]
             },
-            "description": "Returns summary and detailed information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n- with_playlists (optional): Includes an array of all of the playlists associated to the track. Example: true.\n- with_charts (optional): Includes an array of all of the charts associated to the track. Example: true.\n- with_videos (optional): Includes an array of all of the videos currently associated to the track. Example: true.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- with_stations (optional): Includes an array of all of the radio stations currently associated to the track. Example: true.\n- with_radio_plays (optional): Includes the individual radio play timestamps for each returned station. Requires `source=radio` and `with_stations=true`. Use only when raw play occurrences are needed; aggregate radio totals and station summaries do not require it. Example: true.\n- sort (optional): Controls ordering of expanded track-stat lists. greatest (default) preserves each source's existing ranking. latest sorts newest-first by added_at for playlists/charts, release_date for DJ charts, upload date for videos/Shorts/Reels, reposted_at for SoundCloud reposters, record_date for tracklists, and last_played_at for radio stations. Playlist/chart added_at is the earliest recorded addition in the returned aggregate, not the last position update. Missing dates sort last with stable ID tie-breakers. Sorting precedes existing pagination; expansion flags, only_current, response fields, and the maximum limit of 100 are unchanged. Does not reorder source or metadata arrays, or nested radio_plays timestamps. Example: latest.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n- only_current (optional): Only return the playlists and charts the track is currently positioned in. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns summary and detailed information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n- with_playlists (optional): Includes an array of all of the playlists associated to the track. Example: true.\n- with_charts (optional): Includes an array of all of the charts associated to the track. Example: true.\n- with_videos (optional): Includes an array of all of the videos currently associated to the track. Example: true.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- with_stations (optional): Includes an array of all of the radio stations currently associated to the track. Example: true.\n- with_radio_plays (optional): Includes the individual radio play timestamps for each returned station. Requires `source=radio` and `with_stations=true`. Use only when raw play occurrences are needed; aggregate radio totals and station summaries do not require it. Example: true.\n- sort (optional): Controls ordering of expanded track-stat lists. greatest (default) preserves each source's existing ranking. latest sorts newest-first by added_at for playlists/charts, release_date for DJ charts, upload date for videos/Shorts/Reels, reposted_at for SoundCloud reposters, record_date for tracklists, and last_played_at for radio stations. Playlist/chart added_at is the earliest recorded addition in the returned aggregate, not the last position update. Missing dates sort last with stable ID tie-breakers. Sorting precedes existing pagination; expansion flags, only_current, response fields, and the maximum limit of 100 are unchanged. Does not reorder source or metadata arrays, or nested radio_plays timestamps. Example: latest.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n- only_current (optional): Only return the playlists and charts the track is currently positioned in. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3648,7 +3648,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3706,7 +3706,7 @@
                 }
               ]
             },
-            "description": "Returns historic information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- start_date (optional): Specifies the start_date of the historic data that is being requested. Example: 2021-12-31.\n- end_date (optional): Specifies the end_date of the historic data that is being requested. Example: 2022-01-16.\n- with_aggregates (optional): Includes data points aggregated by Songstats like playlists_current, playlists_reach_current, charts_current, etc. Example: true.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns historic information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- start_date (optional): Specifies the start_date of the historic data that is being requested. Example: 2021-12-31.\n- end_date (optional): Specifies the end_date of the historic data that is being requested. Example: 2022-01-16.\n- with_aggregates (optional): Includes data points aggregated by Songstats like playlists_current, playlists_reach_current, charts_current, etc. Example: true.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3740,7 +3740,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3780,7 +3780,7 @@
                 }
               ]
             },
-            "description": "Returns country / city based location information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns country / city based location information of a track filtered by source.\n\n-----------\n\nNOTE: For Artist/Label API Keys, please make sure to always include either the `songstats_artist_id` or `spotify_artist_id` parameter.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: spotify,apple_music,deezer.\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3809,7 +3809,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3836,7 +3836,7 @@
                 }
               ]
             },
-            "description": "Returns sentiment, keywords and comments of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: youtube,soundcloud.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns sentiment, keywords and comments of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- source (required): Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'. Example: youtube,soundcloud.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3865,7 +3865,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3887,7 +3887,7 @@
                 }
               ]
             },
-            "description": "Returns Songshare smart link information of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns Songshare smart link information of a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3961,7 +3961,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -3988,7 +3988,7 @@
                 }
               ]
             },
-            "description": "Request for link to be added to a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- link (required): Link to be added. Example: https://soundcloud.com/dontblink/vibration.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Request for link to be added to a track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- link (required): Link to be added. Example: https://soundcloud.com/dontblink/vibration.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -4010,7 +4010,7 @@
                 {
                   "key": "isrc",
                   "value": "{{isrc}}",
-                  "description": "The ISRC of the track being requested *",
+                  "description": "The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried.",
                   "disabled": true
                 },
                 {
@@ -4037,7 +4037,7 @@
                 }
               ]
             },
-            "description": "Request for link to be removed from track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested * Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- link (required): Link to be deleted. Example: https://soundcloud.com/dontblink/vibration.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Request for link to be removed from track.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- link (required): Link to be deleted. Example: https://soundcloud.com/dontblink/vibration.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
