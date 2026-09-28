@@ -28,6 +28,14 @@ Or import it from a local checkout:
 
 All authenticated requests include your API key in the `apikey` header.
 
+For track requests using an entity-based (Artist/Label) or member API key,
+enable one parent query parameter alongside the track identifier:
+`songstats_artist_id`, `spotify_artist_id`, or `apple_music_artist_id` for an
+artist; `songstats_label_id` or `beatport_label_id` for a label. The track must
+belong to that artist or label. The collection leaves these alternatives
+disabled by default; request-based API keys do not require a parent selector.
+This applies to track lookups and mutations, not track search.
+
 ---
 
 ## API Documentation
