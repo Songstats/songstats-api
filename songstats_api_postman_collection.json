@@ -293,6 +293,10 @@
       "key": "spotify_playlist_id",
       "value": "37i9dQZF1DXcBWIGoYBM5M",
       "type": "string"
+    },
+    {
+      "key": "songstats_album_id",
+      "value": ""
     }
   ],
   "item": [
@@ -824,10 +828,28 @@
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
                   "disabled": true
+                },
+                {
+                  "key": "catalog_type",
+                  "value": "albums",
+                  "disabled": true,
+                  "description": "tracks (default) preserves the existing track catalog. albums returns albums for this artist/label and requires album beta access. Album pages use limit 1–50 and cursor; offset is not supported in album mode."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
                 }
               ]
             },
-            "description": "Returns the track catalog of an artist ordered by release date.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of an artist ordered by release date descending, with Songstats track ID ascending as a stable tie-breaker. Use catalog_type=albums for the album beta catalog. Album mode returns the same catalog array with album objects and albums_total instead of tracks_total, ordered by stable Songstats catalog ID. It uses limit 1–50 (default 50), next_cursor/next_url, and no offset. Existing track requests are unchanged. Album beta and source permissions apply; label results require source-release label evidence. Album tracks are retrieved within /albums/info.\nGenerated from docs/songstats_api_openapi.yaml.\n\nUse catalog_type=albums for beta album discovery; preserve the same source and parent when following next_cursor/next_url."
           },
           "response": []
         },
@@ -2758,10 +2780,28 @@
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
                   "disabled": true
+                },
+                {
+                  "key": "catalog_type",
+                  "value": "albums",
+                  "disabled": true,
+                  "description": "tracks (default) preserves the existing track catalog. albums returns albums for this artist/label and requires album beta access. Album pages use limit 1–50 and cursor; offset is not supported in album mode."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
                 }
               ]
             },
-            "description": "Returns the track catalog of a record label ordered by release date.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- limit (optional): Specifies the limit of results being returned. Example: 20.\n- offset (optional): Specifies the offset of the limited results being returned. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of a record label ordered by release date descending, with Songstats track ID ascending as a stable tie-breaker. Use catalog_type=albums for the album beta catalog. Album mode returns the same catalog array with album objects and albums_total instead of tracks_total, ordered by stable Songstats catalog ID. It uses limit 1–50 (default 50), next_cursor/next_url, and no offset. Existing track requests are unchanged. Album beta and source permissions apply; label results require source-release label evidence. Album tracks are retrieved within /albums/info.\nGenerated from docs/songstats_api_openapi.yaml.\n\nUse catalog_type=albums for beta album discovery; preserve the same source and parent when following next_cursor/next_url."
           },
           "response": []
         },
@@ -4418,6 +4458,255 @@
               ]
             },
             "description": "Requests that Songstats add or monitor a radio, digital, satellite radio, or TV station.\nLive Rails route inferred from config/routes.rb and Enterprise controller behavior; this endpoint is not currently present in docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- radio_type (required): Station type. Allowed values: radio, digital, sat_radio, tv. Example: radio.\n- name (required): Station name. Example: Example FM.\n- country_code (required): Two-letter country code. Example: US.\n- website (required): Station website. Example: https://example.com.\n- stream_url (optional): Optional stream URL. Example: https://example.com/stream.\n- city_name (optional): Optional station city. Example: Los Angeles.\n- frequency (optional): Optional broadcast frequency. Example: 101.1.\n- contact (optional): Optional station contact. Example: programming@example.com.\n- comment (optional): Optional request comment. Example: Please add this station..\n\nDocumented responses: 200, 300, 400, 401, 403, 429, 500."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Albums (Beta)",
+      "item": [
+        {
+          "name": "Get Album Info (Beta)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "{{apikey}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/albums/info?songstats_album_id={{songstats_album_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albums",
+                "info"
+              ],
+              "query": [
+                {
+                  "key": "songstats_album_id",
+                  "value": "{{songstats_album_id}}",
+                  "disabled": false,
+                  "description": "Songstats canonical album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "spotify_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "spotify album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "apple_music_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "apple music album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "amazon_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "amazon album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "deezer_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "deezer album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "beatport_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "beatport album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "traxsource_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "traxsource album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "tidal_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "tidal album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "qobuz_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "qobuz album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "songstats_artist_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the artist being requested *"
+                },
+                {
+                  "key": "songstats_label_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the label being requested *"
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "disabled": true,
+                  "description": "Known tracks per info page. Statistics use this as the per-source chart highlight limit."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                }
+              ]
+            },
+            "description": "Returns album metadata and a tracks section containing up to 50 known recordings, with next_cursor and next_url for subsequent pages of this same endpoint. Tracks use stable catalog order, not official disc/track order; completeness is unknown. Canonical contributing artists and known tracks are metadata, while links and label evidence follow source/profile access. Retired IDs resolve only when former source releases agree on one successor; ambiguous splits return 404. No album page URL is available yet.\n\nBeta: non-member keys require explicit albums object access and Songstats access; all alone does not enroll a key. Member keys require existing beta access and Songstats entitlement. Entity/member keys must include songstats_artist_id or songstats_label_id. Album statistics for member keys require subscription coverage for every known recording. Existing label/track statistics are unchanged.\nGenerated from docs/songstats_api_openapi.yaml."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Album Stats (Beta)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "{{apikey}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/albums/stats?songstats_album_id={{songstats_album_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albums",
+                "stats"
+              ],
+              "query": [
+                {
+                  "key": "songstats_album_id",
+                  "value": "{{songstats_album_id}}",
+                  "disabled": false,
+                  "description": "Songstats canonical album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "spotify_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "spotify album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "apple_music_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "apple music album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "amazon_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "amazon album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "deezer_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "deezer album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "beatport_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "beatport album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "traxsource_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "traxsource album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "tidal_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "tidal album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "qobuz_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "qobuz album ID. Provide exactly one album identifier; provider IDs resolve existing releases only."
+                },
+                {
+                  "key": "songstats_artist_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the artist being requested *"
+                },
+                {
+                  "key": "songstats_label_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the label being requested *"
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
+                },
+                {
+                  "key": "scope",
+                  "value": "release_recordings",
+                  "disabled": true,
+                  "description": "release_recordings uses source recording counters on eligible releases; counters may be shared and are not release-exclusive. recording_catalog includes appearances on other releases and is not allowed with a label parent. Unsupported release-attributed measurements remain unavailable."
+                },
+                {
+                  "key": "with_charts",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Includes an array of all of the charts associated to the track."
+                },
+                {
+                  "key": "only_current",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Only return the playlists and charts the track is currently positioned in."
+                },
+                {
+                  "key": "limit",
+                  "value": "30",
+                  "disabled": true,
+                  "description": "Known tracks per info page. Statistics use this as the per-source chart highlight limit."
+                }
+              ]
+            },
+            "description": "Returns current album analytics in the standard stats array of source/data objects. Native Spotify album popularity is returned per source release, with missing values and staleness explicit. Recording statistics default to release_recordings scope; use recording_catalog only for explicitly wider context. Streams, views and Shazams are separate metrics, not a cross-platform total. Spotify shared counters must not be summed again across albums or labels. with_charts=true adds up to 30 native album chart/feature highlights per source by default (limit up to 50); it does not return track placements. No historic_stats endpoint is available. Refresh is asynchronous for requested Spotify releases; popularity can remain unavailable.\n\nBeta: non-member keys require explicit albums object access and Songstats access; all alone does not enroll a key. Member keys require existing beta access and Songstats entitlement. Entity/member keys must include songstats_artist_id or songstats_label_id. Album statistics for member keys require subscription coverage for every known recording. Existing label/track statistics are unchanged.\nGenerated from docs/songstats_api_openapi.yaml."
           },
           "response": []
         }
