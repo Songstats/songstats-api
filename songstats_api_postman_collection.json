@@ -295,6 +295,10 @@
       "type": "string"
     },
     {
+      "key": "songstats_album_id",
+      "value": ""
+    },
+    {
       "key": "track_songstats_artist_id",
       "value": "48ra1cnv",
       "type": "string"
@@ -829,10 +833,28 @@
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
                   "disabled": true
+                },
+                {
+                  "key": "catalog_type",
+                  "value": "albums",
+                  "disabled": true,
+                  "description": "Return tracks (default) or albums. Album catalogs use cursor pagination with a limit of 1–50."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
                 }
               ]
             },
-            "description": "Returns the track catalog of an artist ordered by release date. Follow next_url when present; it preserves the profile type and link option.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Number of catalog tracks per page (0–100). Omit to return the full catalog. Zero returns no tracks and no next URL. Send this parameter at most once. Example: 20.\n- offset (optional): Number of tracks to skip when limit is supplied (0–2147483647). Send this parameter at most once. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of an artist ordered by release date. Use catalog_type=albums to retrieve albums. Follow next_url when present; it preserves the profile type and link option.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- catalog_type (optional): Use tracks (default) or albums.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: pod5zlug.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- limit (optional): Number of catalog tracks per page (0–100). Omit to return the full catalog. Zero returns no tracks and no next URL. Send this parameter at most once. Example: 20.\n- offset (optional): Number of tracks to skip when limit is supplied (0–2147483647). Send this parameter at most once. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -2813,10 +2835,28 @@
                   "value": "{{with_links}}",
                   "description": "Includes an array of all of the source links associated with the requested objected.",
                   "disabled": true
+                },
+                {
+                  "key": "catalog_type",
+                  "value": "albums",
+                  "disabled": true,
+                  "description": "Return tracks (default) or albums. Album catalogs use cursor pagination with a limit of 1–50."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
                 }
               ]
             },
-            "description": "Returns the track catalog of a record label ordered by release date. Follow next_url when present; it preserves the profile type and link option.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- limit (optional): Number of catalog tracks per page (0–100). Omit to return the full catalog. Zero returns no tracks and no next URL. Send this parameter at most once. Example: 20.\n- offset (optional): Number of tracks to skip when limit is supplied (0–2147483647). Send this parameter at most once. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
+            "description": "Returns the track catalog of a record label ordered by release date. Use catalog_type=albums to retrieve albums. Follow next_url when present; it preserves the profile type and link option.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- catalog_type (optional): Use tracks (default) or albums.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n- limit (optional): Number of catalog tracks per page (0–100). Omit to return the full catalog. Zero returns no tracks and no next URL. Send this parameter at most once. Example: 20.\n- offset (optional): Number of tracks to skip when limit is supplied (0–2147483647). Send this parameter at most once. Example: 20.\n- with_links (optional): Includes an array of all of the source links associated with the requested objected. Example: true.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503."
           },
           "response": []
         },
@@ -3434,6 +3474,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -3458,14 +3504,14 @@
                   "disabled": true
                 },
                 {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
-                  "disabled": true
+                  "key": "source",
+                  "value": "all",
+                  "disabled": true,
+                  "description": "Filters album references only; defaults to all accessible sources."
                 }
               ]
             },
-            "description": "Returns metadata information of a track.\n\nFor entity-based (Artist/Label) and member API keys, include one artist, collaborator or label identifier alongside the track identifier: `songstats_artist_id`, `spotify_artist_id`, or `apple_music_artist_id` for an artist; `songstats_collaborator_id` for a collaborator (the existing `songstats_artist_id` parameter is also accepted and takes precedence when both are supplied); `songstats_label_id` or `beatport_label_id` for a label. The track must belong to that artist, collaborator or label. These entity selectors are optional for request-based API keys.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Pass a single ISRC string; arrays and objects are invalid. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: 48ra1cnv.\n- songstats_collaborator_id (optional): The Songstats ID of the collaborator being requested * Example: vkwh40ql.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nDocumented responses: 200, 400, 401, 403, 404, 429, 500, 502, 503.\n\nIf supplied, legacy limit and offset values must each be a single query value. Malformed shapes are rejected before quota accounting."
+            "description": "Returns metadata information of a track.\n\nFor entity-based (Artist/Label) and member API keys, include one artist, collaborator or label identifier alongside the track identifier: `songstats_artist_id`, `spotify_artist_id`, or `apple_music_artist_id` for an artist; `songstats_collaborator_id` for a collaborator (the existing `songstats_artist_id` parameter is also accepted and takes precedence when both are supplied); `songstats_label_id` or `beatport_label_id` for a label. The track must belong to that artist, collaborator or label. These entity selectors are optional for request-based API keys.\nGenerated from docs/songstats_api_openapi.yaml.\n\nQuery parameters:\nAlbum-enabled keys also receive track_info.albums with songstats_album_id, name and release_date. References respect source and profile access; the field is omitted without album-info access and is empty when no eligible albums are known. The optional source parameter filters album references only.\n- isrc (optional): The ISRC of the track being requested *. When a missing-track lookup schedules background discovery, the 404 response confirms queue acceptance. If the queue rejects that search, the endpoint returns 503 and the request can be retried. Pass a single ISRC string; arrays and objects are invalid. Example: GBAYE2100626.\n- songstats_track_id (optional): The Songstats ID of the track being requested * Example: k4bp9etx.\n- spotify_track_id (optional): The Spotify ID of the track being requested * Example: 1YLGtZjDKyY0Qkv4QlX31b.\n- apple_music_track_id (optional): The Apple Music ID of the track being requested * Example: 1567644047.\n- songstats_artist_id (optional): The Songstats ID of the artist being requested * Example: 48ra1cnv.\n- songstats_collaborator_id (optional): The Songstats ID of the collaborator being requested * Example: vkwh40ql.\n- songstats_label_id (optional): The Songstats ID of the label being requested * Example: 7gk4yfc9.\n- spotify_artist_id (optional): The Spotify ID of the artist being requested * Example: 28j8lBWDdDSHSSt5oPlsX2.\n- apple_music_artist_id (optional): The Apple Music ID of the artist being requested * Example: 261545033.\n- beatport_label_id (optional): The Beatport ID of the label being requested * Example: 74932.\n\nHeaders:\n- Accept-Encoding: gzip, deflate, br\n\nAlbum-enabled keys also receive track_info.albums with songstats_album_id, name and release_date. References respect source and profile access; the field is omitted without album-info access and is empty when no eligible albums are known. The optional source parameter filters album references only.\n\nIf supplied, legacy limit and offset values must each be a single query value. Malformed shapes are rejected before quota accounting.\n\n- source (optional): Filters album references only; defaults to all accessible sources."
           },
           "response": []
         },
@@ -3580,6 +3626,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -3589,12 +3641,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -3732,6 +3778,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -3741,12 +3793,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -3842,6 +3888,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -3851,12 +3903,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -3934,6 +3980,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -3943,12 +3995,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -4010,8 +4056,14 @@
                 {
                   "key": "songstats_artist_id",
                   "value": "{{track_songstats_artist_id}}",
-                  "disabled": true,
-                  "description": "The Songstats ID of the artist being requested *"
+                  "description": "The Songstats ID of the artist being requested *",
+                  "disabled": true
+                },
+                {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
                 },
                 {
                   "key": "songstats_label_id",
@@ -4036,12 +4088,6 @@
                   "value": "{{beatport_label_id}}",
                   "disabled": true,
                   "description": "The Beatport ID of the label being requested *"
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
-                  "disabled": true
                 }
               ]
             },
@@ -4101,6 +4147,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -4122,12 +4174,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -4238,6 +4284,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -4259,12 +4311,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -4323,6 +4369,12 @@
                   "disabled": true
                 },
                 {
+                  "key": "songstats_collaborator_id",
+                  "value": "{{songstats_collaborator_id}}",
+                  "description": "The Songstats ID of the collaborator being requested *",
+                  "disabled": true
+                },
+                {
                   "key": "songstats_label_id",
                   "value": "{{songstats_label_id}}",
                   "description": "The Songstats ID of the label being requested *",
@@ -4344,12 +4396,6 @@
                   "key": "beatport_label_id",
                   "value": "{{beatport_label_id}}",
                   "description": "The Beatport ID of the label being requested *",
-                  "disabled": true
-                },
-                {
-                  "key": "songstats_collaborator_id",
-                  "value": "{{songstats_collaborator_id}}",
-                  "description": "The Songstats ID of the collaborator being requested *",
                   "disabled": true
                 }
               ]
@@ -4573,6 +4619,201 @@
               ]
             },
             "description": "Submits a station-monitoring request for review. Requires an enabled member API key, or an Enterprise agreement with both station/account setup permission and Radiostats access. Other agreement keys receive 403.\n\nRequests are scoped to the API key's member. Repeating the same station type, name and country code for that member returns the existing request without replacing its optional fields. A successful response acknowledges the pending request; it does not mean that the station is already monitored or that a provider submission has completed. This mutation is not available through the read-only MCP tools.\n\nQuery parameters:\n- radio_type (required): Station type.\n- name (required): Station name.\n- country_code (required): Station country code.\n- website (required): Station website.\n- stream_url (optional): Optional station stream URL.\n- city_name (optional): Optional station city.\n- frequency (optional): Optional broadcast frequency.\n- contact (optional): Optional station contact.\n- comment (optional): Optional request notes.\n\nDocumented responses: 200, 400, 401, 403, 429."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Albums",
+      "item": [
+        {
+          "name": "Get Album Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "{{apikey}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/albums/info?songstats_album_id={{songstats_album_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albums",
+                "info"
+              ],
+              "query": [
+                {
+                  "key": "songstats_album_id",
+                  "value": "{{songstats_album_id}}",
+                  "disabled": false,
+                  "description": "The Songstats ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "spotify_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Spotify ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "apple_music_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Apple Music ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "beatport_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Beatport ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "songstats_artist_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the artist being requested *"
+                },
+                {
+                  "key": "songstats_label_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the label being requested *"
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
+                },
+                {
+                  "key": "limit",
+                  "value": "50",
+                  "disabled": true,
+                  "description": "Known tracks per info page. Statistics use this as the per-source chart highlight limit."
+                },
+                {
+                  "key": "cursor",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Opaque next_cursor from this endpoint with the same album/profile/source filters. Omit for the first page. Membership changes between pages may affect results."
+                }
+              ]
+            },
+            "description": "Returns metadata information and tracks for an album."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Album Stats",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "apikey",
+                "value": "{{apikey}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/albums/stats?songstats_album_id={{songstats_album_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "albums",
+                "stats"
+              ],
+              "query": [
+                {
+                  "key": "songstats_album_id",
+                  "value": "{{songstats_album_id}}",
+                  "disabled": false,
+                  "description": "The Songstats ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "spotify_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Spotify ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "apple_music_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Apple Music ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "beatport_album_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Beatport ID of the album being requested. Provide exactly one album identifier."
+                },
+                {
+                  "key": "songstats_artist_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the artist being requested *"
+                },
+                {
+                  "key": "songstats_label_id",
+                  "value": "",
+                  "disabled": true,
+                  "description": "The Songstats ID of the label being requested *"
+                },
+                {
+                  "key": "source",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Specifies the sources that data is being requested for. Can be a comma separated list of individual sources or be set to 'all'."
+                },
+                {
+                  "key": "scope",
+                  "value": "release_recordings",
+                  "disabled": true,
+                  "description": "Use release_recordings for this release or recording_catalog for all appearances of its recordings. Label requests support release_recordings only."
+                },
+                {
+                  "key": "with_charts",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Includes an array of all of the charts associated to the track."
+                },
+                {
+                  "key": "only_current",
+                  "value": "",
+                  "disabled": true,
+                  "description": "Only return the playlists and charts the track is currently positioned in."
+                },
+                {
+                  "key": "limit",
+                  "value": "30",
+                  "disabled": true,
+                  "description": "Maximum native chart highlights per source when with_charts=true."
+                },
+                {
+                  "key": "with_links",
+                  "value": "true",
+                  "disabled": true,
+                  "description": "Includes an array of all of the source links associated with the requested objected."
+                }
+              ]
+            },
+            "description": "Returns current statistics for an album."
           },
           "response": []
         }
